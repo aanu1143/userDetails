@@ -9,10 +9,10 @@
 <body>
     <h1>User Details</h1>
     {% if user_detail_list %}
+    <p>User Name: </p>
     <ul>
         {% for detail in user_detail_list %}
-        <p>First Name: </p>
-        <li>{{ detail.first_name }}</li>
+        <li>{{ detail.first_name }} {{ detail.last_name }}</li>
         {% endfor %}
     </ul>
     {% else %}
