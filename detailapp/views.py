@@ -1,6 +1,13 @@
 from django.shortcuts import render
 from django.http import HttpResponse
+from detailapp.models import *
+from django.template import loader
 
 
 def index(request):
-    return HttpResponse("Hello, world. You're at the polls index.")
+    user_detail_list = UserDetails.objects.order_by('-id')[:5]
+    template = loader.get_template('detailapp/view_web.html')
+    context = {
+        'latest_question_list': user_detail_list,
+    }
+    return HttpResponse(template.render(context, request))

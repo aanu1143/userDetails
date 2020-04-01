@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1>User Details</h1>
+    {% if user_detail_list %}
+    <ul>
+        {% for detail in user_detail_list %}
+        <p>First Name: </p>
+        <li>{{ detail.first_name }}</li>
+        {% endfor %}
+    </ul>
+    {% else %}
+    <p>No details are available.</p>
+    {% endif %}
+</body>
+</html>
